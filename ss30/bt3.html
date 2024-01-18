@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sort(str) {
+        let letters = [];
+        let numbers = [];
+        let special_chars = [];
+
+        for (let i = 0; i < str.length; i++) {
+          if (
+            (str[i] >= "a" && str[i] <= "z") ||
+            (str[i] >= "A" && str[i] <= "Z")
+          ) {
+            letters.unshift(str[i]);
+          } else if (str[i] >= "0" && str[i] <= "9") {
+            numbers.unshift(str[i]);
+          } else {
+            special_chars.push(str[i]);
+          }
+        }
+        return [...letters, ...numbers, ...special_chars];
+      }
+      let str = prompt("nhap 1 chuoi");
+      let result = sort(str).join("");
+      document.write(result);
+    </script>
+  </body>
+</html>
